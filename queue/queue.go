@@ -31,7 +31,7 @@ func (this *Queue) Peek() interface{} {
 	if this.head == nil {
 		return nil
 	}
-	return this.top.value
+	return this.head.value
 }
 
 func (this *Queue) Push(v interface{}) {
