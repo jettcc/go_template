@@ -75,5 +75,5 @@ func test() {
 		trie.Insert(word)
 	}
 	term := "Golang"
-	fmt.Printf(trie.Find(term))
+	fmt.Println(trie.Find(term))
 }
