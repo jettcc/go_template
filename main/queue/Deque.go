@@ -71,3 +71,14 @@ func (this *Deque) PollFirst() interface{} {
 	this.size--
 	return val.value
 }
+
+func (this *Deque) pollLast() interface{} {
+	if this.size == 0 {
+		return nil
+	}
+	val := this.tail.prev
+	this.tail.prev = val.prev
+	val.prev.next = this.tail
+	this.size--
+	return val.value
+}
