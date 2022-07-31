@@ -1,6 +1,8 @@
 // 队列模板
 package main
 
+import "fmt"
+
 type Queue struct {
 	head *node
 	tail *node
@@ -58,4 +60,18 @@ func (this *Queue) Poll() interface{} {
 	val.next.prev = this.head
 	this.size--
 	return val.value
+}
+
+func main() {
+	queue := NewQueue()
+	queue.Push(1)
+	queue.Push(2)
+	queue.Push(3)
+	queue.Push(4)
+	queue.Push(5)
+	queue.Push(6)
+	queue.Poll()
+	queue.Poll()
+	queue.Poll()
+	fmt.Printf("%+v\n", queue.head.next)
 }
