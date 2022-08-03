@@ -43,3 +43,23 @@ func left_binarySerch(nums []int, tar int) int {
 	}
 	return l
 }
+
+/**
+ * 寻找右侧边界的二分查找
+ */
+func right_binarySerch(nums []int, tar int) int {
+	n := len(nums)
+	if n == 0 {
+		return -1
+	}
+	l, r := 0, n
+	for l < r {
+		var mid = l + ((r - l) >> 1)
+		if nums[mid] > tar {
+			r = mid
+		} else {
+			l = mid + 1
+		}
+	}
+	return r - 1
+}
