@@ -1,21 +1,21 @@
-// 双端队列模板
-package main
+package queue
 
+// 双端队列模板
 type Deque struct {
-	head *node
-	tail *node
+	head *dequeNode
+	tail *dequeNode
 	size int
 }
 
-type node struct {
-	prev  *node
-	next  *node
+type dequeNode struct {
+	prev  *dequeNode
+	next  *dequeNode
 	value interface{}
 }
 
 func NewDeque() *Deque {
-	head := &node{nil, nil, nil}
-	tail := &node{nil, nil, nil}
+	head := &dequeNode{nil, nil, nil}
+	tail := &dequeNode{nil, nil, nil}
 	head.next = tail
 	tail.prev = head
 	return &Deque{head, tail, 0}
@@ -37,7 +37,7 @@ func (this *Deque) Peek() interface{} {
 }
 
 func (this *Deque) PushFirst(v interface{}) {
-	val := &node{nil, nil, v}
+	val := &dequeNode{nil, nil, v}
 	last := this.head.next
 
 	this.head.next = val
@@ -49,7 +49,7 @@ func (this *Deque) PushFirst(v interface{}) {
 }
 
 func (this *Deque) PushLast(v interface{}) {
-	val := &node{nil, nil, v}
+	val := &dequeNode{nil, nil, v}
 	front := this.tail.prev
 
 	front.next = val

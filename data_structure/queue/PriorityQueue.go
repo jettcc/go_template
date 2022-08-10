@@ -1,4 +1,4 @@
-package main
+package queue
 
 type Item struct {
 	value    int64 // 随意类型

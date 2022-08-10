@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package sort
 
 /**
  *归并排序
@@ -86,11 +84,4 @@ func t_merge(nums, temp []int, left, mid, right int) {
 		left++
 		t++
 	}
-}
-
-func main() {
-	arr := []int{5, 7, 3, 4, 1, 2, 8, 6}
-	merge_sort(arr)
-	fmt.Println(arr)
-	fmt.Println(MergeSort(arr))
 }

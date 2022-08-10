@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package sort
 
 /**
  * 插入排序
@@ -22,8 +20,3 @@ func InsertSort(nums []int) {
 }
 
 // 当数组已经是有序的，每插入一个元素，只需要考查前一个元素，因此最好情况下，插入排序的时间复杂度为O(N)。
-func main() {
-	arr := []int{5, 7, 3, 4, 1, 2, 8, 6}
-	InsertSort(arr)
-	fmt.Println(arr)
-}

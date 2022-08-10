@@ -1,4 +1,6 @@
 // 栈模板
+package stack
+
 type Stack struct {
 	head *node
 	tail *node

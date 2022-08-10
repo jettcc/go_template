@@ -1,23 +1,23 @@
 // 队列模板
-package main
+package queue
 
 import "fmt"
 
 type Queue struct {
-	head *node
-	tail *node
+	head *queueNode
+	tail *queueNode
 	size int
 }
 
-type node struct {
-	prev  *node
-	next  *node
+type queueNode struct {
+	prev  *queueNode
+	next  *queueNode
 	value interface{}
 }
 
 func NewQueue() *Queue {
-	head := &node{nil, nil, nil}
-	tail := &node{nil, nil, nil}
+	head := &queueNode{nil, nil, nil}
+	tail := &queueNode{nil, nil, nil}
 	head.next = tail
 	tail.prev = head
 	return &Queue{head, tail, 0}
@@ -39,7 +39,7 @@ func (this *Queue) Peek() interface{} {
 }
 
 func (this *Queue) Push(v interface{}) {
-	val := &node{nil, nil, v}
+	val := &queueNode{nil, nil, v}
 	front := this.tail.prev
 
 	front.next = val
