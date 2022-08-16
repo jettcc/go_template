@@ -8,9 +8,13 @@ type Dsu struct {
 
 func NewDsu(n int) *Dsu {
 	root, size := make([]int, n), make([]int, n)
+	for i := 0; i < n; i++ {
+		root[i] = i
+		size[i] = 1
+	}
 	return &Dsu{
-		root:  make([]int, n),
-		size:  make([]int, n),
+		root:  root,
+		size:  size,
 		count: n,
 	}
 }
