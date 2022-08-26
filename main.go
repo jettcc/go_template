@@ -3,6 +3,19 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(0x100 | 0x001)
+	var s *sk
+	s = &sk{
+		v: 10,
+	}
+	test(s)
+	fmt.Println(s.v)
+}
 
+type sk struct {
+	v int
+}
+
+func test(s *sk) {
+	s.v = 5
+	fmt.Println(s.v)
 }

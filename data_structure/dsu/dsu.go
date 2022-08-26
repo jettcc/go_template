@@ -31,7 +31,11 @@ func (d *Dsu) Union(x, y int) {
 	if rx == ry {
 		return
 	}
-	d.root[rx] = ry
+	if d.size[rx] < d.size[ry] {
+		rx, ry = ry, rx
+	}
+	d.root[ry] = rx
+	d.size[rx] += d.size[ry]
 	d.count--
 }
 
